@@ -3,6 +3,9 @@ const express = require('express');
 const hbs = require('hbs');
 const geocode = require('./utils/geocode')
 const app = express();
+const port = process.env.PORT || 3000
+
+
 const publicdirectory = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname,'../templates/views')
 const partialsPath = path.join(__dirname,'../templates/partials')
@@ -38,12 +41,7 @@ geocode(req.query.search,(error,data)=>{
         address : req.query.search
     })
 })
-    // console.log(req.query.search)
-    // res.send({
-    //     products:[],
-    //     answer : req.query.search
-
-    // })
+ 
 })
 
 
@@ -52,8 +50,6 @@ geocode(req.query.search,(error,data)=>{
 app.get('*',(req,res)=>{
     res.send('This is a 404 page')
 })
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('Server is up on port 3000');
 })
-console.log(__dirname)
-console.log(__filename)
