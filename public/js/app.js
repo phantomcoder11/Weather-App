@@ -35,16 +35,3 @@ fetch(url).then((response)=>{
 })
 })
 
-console.log("Helloooo")
-fetch('https://puzzle.mead.io/puzzle').then((response)=>{
-    response.json().then((data)=>{
-        console.log(data)
-    })
-})
-// const url ='https://api.openweathermap.org/data/2.5/weather?q=jorhat&units=metric&appid=4f49ef6dba7e317857e115d190c5d2bc';
-// fetch(url).then((response)=>{
-//     response.json().then((data)=>{
-    
-//         console.log(data.main.temp)
-//     })
-// })
