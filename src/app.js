@@ -15,10 +15,7 @@ app.use(express.static(publicdirectory))
 
 var names = 'Weather App'
 app.get('',(req,res)=>{
-    res.render('index',{
-        title: names,
-        name:'Hello from'
-    })
+    res.render('index')
 })
 
 
@@ -51,9 +48,7 @@ geocode(req.query.search,(error,data)=>{
 
 
 
-app.get('/weather/*',(req,res)=>{
-    res.send('Weather article not found')
-})
+
 app.get('*',(req,res)=>{
     res.send('This is a 404 page')
 })
